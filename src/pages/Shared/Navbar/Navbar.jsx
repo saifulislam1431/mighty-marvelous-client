@@ -73,10 +73,11 @@ const Navbar = () => {
                             {navItems}
 
                             {
-                                user ? <div className='inline-flex gap-2 items-center'>
+                                user ? <div className=''>
                                 <button className='myBtn mr-3 inline-flex items-center gap-2' onClick={handleLogOut}>Sign Out <FaSignOutAlt /></button>
-                                <div className="w-10 rounded-full">
-                                    <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                <div>
+                                    <img src={user.photoURL}  className='w-14 rounded-full mx-auto mt-3'/>
+                                    <p className='absolute top-4 bg-opacity-90 text-black text-center flex items-center justify-center opacity-0 hover:opacity-100 right-2 bg-primary p-1 text-sm w-20 h-10'>{user.displayName}</p>
                                 </div>
                                 </div> : <Link to="/login"><button className='myBtn inline-flex items-center gap-1'>Sign In <FaSignInAlt /></button></Link>
                             }
@@ -97,8 +98,9 @@ const Navbar = () => {
                     {
                         user ? <div className='inline-flex gap-2 items-center'>
                         <button className='myBtn mr-3 inline-flex items-center gap-2' onClick={handleLogOut}>Sign Out <FaSignOutAlt /></button>
-                        <div className="w-10 rounded-full">
-                            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        <div>
+                            <img src={user.photoURL} className='w-10 rounded-full'/>
+                            <p className='absolute top-4 bg-opacity-90 text-black text-center flex items-center justify-center opacity-0 hover:opacity-100 p-1 text-sm right-2 bg-primary w-20 h-10'>{user.displayName}</p>
                         </div>
                         </div> : <Link to="/login"><button className='myBtn inline-flex items-center gap-1'>Sign In <FaSignInAlt /></button></Link>
                     }
