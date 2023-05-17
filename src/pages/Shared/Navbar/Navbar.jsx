@@ -2,9 +2,41 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { userContext } from '../../../Auth/Auth';
 import logo from "../../../assets/logo/logo2.png";
+import { toast } from 'react-toastify';
 import "./Navbar.css"
+import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa';
 const Navbar = () => {
-    const { user } = useContext(userContext);
+    const { user,logOUt } = useContext(userContext);
+    const handleLogOut = ()=>{
+        logOUt()
+        .then(() => {
+
+            toast.success('Log Out Successful!', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+
+            
+        })
+        .catch((error) => {
+            toast.error(error.message, {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        })
+    }
     const navItems = <>
         <li>
             <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "default")}>Home</NavLink>
@@ -41,9 +73,12 @@ const Navbar = () => {
                             {navItems}
 
                             {
-                                user ? <div className="w-10 rounded-full">
+                                user ? <div className='inline-flex gap-2 items-center'>
+                                <button className='myBtn mr-3 inline-flex items-center gap-2' onClick={handleLogOut}>Sign Out <FaSignOutAlt /></button>
+                                <div className="w-10 rounded-full">
                                     <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                                </div> : <Link to="login"><button className='myBtn'>Sign In</button></Link>
+                                </div>
+                                </div> : <Link to="/login"><button className='myBtn inline-flex items-center gap-1'>Sign In <FaSignInAlt /></button></Link>
                             }
 
                         </ul>
@@ -60,9 +95,12 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     {
-                        user ? <div className="w-10 rounded-full">
+                        user ? <div className='inline-flex gap-2 items-center'>
+                        <button className='myBtn mr-3 inline-flex items-center gap-2' onClick={handleLogOut}>Sign Out <FaSignOutAlt /></button>
+                        <div className="w-10 rounded-full">
                             <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                        </div> : <Link to="login"><button className='myBtn'>Sign In</button></Link>
+                        </div>
+                        </div> : <Link to="/login"><button className='myBtn inline-flex items-center gap-1'>Sign In <FaSignInAlt /></button></Link>
                     }
                 </div>
                 
