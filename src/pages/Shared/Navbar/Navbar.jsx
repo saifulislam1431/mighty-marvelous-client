@@ -58,8 +58,8 @@ const Navbar = () => {
 
     </>
     return (
-        <section className='sticky top-0'>
-            <div className="navbar navBg sticky top-0">
+        <section className='sticky top-0 z-50'>
+            <div className="navbar navBg sticky top-0 z-50">
             <div className='navbar-start inline-flex items-center lg:hidden'>
                         <img src={logo} alt="" className='w-14' />
                         <h1 className='brand-title text-xl'>Mighty Marvelous</h1>
