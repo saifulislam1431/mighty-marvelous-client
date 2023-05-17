@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { userContext } from '../../../Auth/Auth';
 import logo from "../../../assets/logo/logo2.png";
+import "./Navbar.css"
 const Navbar = () => {
     const { user } = useContext(userContext);
     const navItems = <>
@@ -25,8 +26,8 @@ const Navbar = () => {
 
     </>
     return (
-        <section>
-            <div className="navbar bg-base-100">
+        <section className='sticky top-0'>
+            <div className="navbar navBg sticky top-0">
             <div className='navbar-start inline-flex items-center lg:hidden'>
                         <img src={logo} alt="" className='w-14' />
                         <h1 className='brand-title text-xl'>Mighty Marvelous</h1>
