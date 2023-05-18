@@ -3,6 +3,7 @@ import Banner from '../Banner/Banner';
 import Gallery from '../Gallery/Gallery';
 import ExploreMore from '../ExploreMore/ExploreMore';
 import CollectorShowcase from '../CollectorShowcase/CollectorShowcase';
+import Contact from '../../Contact/Contact';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Gallery />
             <ExploreMore />
             <CollectorShowcase />
+            <Contact />
         </section>
     );
 };

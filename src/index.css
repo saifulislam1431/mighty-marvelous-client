@@ -18,6 +18,10 @@
 @apply px-4 py-1 bg-primary text-white rounded-md hover:bg-secondary
 }
 
+.mySecBtn{
+  @apply px-4 py-1 border border-primary text-primary rounded-md hover:bg-primary hover:text-white
+}
+
 .active{
   @apply bg-transparent text-secondary font-medium
 }
