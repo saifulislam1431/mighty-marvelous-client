@@ -21,48 +21,48 @@ const Gallery = () => {
                         <div className='relative'>
                             <img src={img1} alt="Image 1" className='w-[150px] lg:w-52 rounded-xl' />
                             <div className='w-[150px] lg:w-52 h-full rounded-xl absolute bg-secondary bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-500 top-0'>
-<h1 className='flex w-full h-full justify-center items-center lg:text-3xl font-extrabold text-white'>Captain Marvel</h1>
+                                <h1 className='flex w-full h-full justify-center items-center lg:text-3xl font-extrabold text-white'>Captain Marvel</h1>
                             </div>
                         </div>
                         <div className='relative'>
                             <img src={img2} alt="Image 2" className='w-[220px] lg:w-[420px] rounded-xl h-[150px] lg:h-[200px]' />
                             <div className='w-[220px] lg:w-[420px] rounded-xl h-[150px] lg:h-[200px] absolute bg-secondary bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-500 top-0'>
-<h1 className='flex w-full h-full justify-center items-center lg:text-3xl font-extrabold text-white'>Hulk</h1>
+                                <h1 className='flex w-full h-full justify-center items-center lg:text-3xl font-extrabold text-white'>Hulk</h1>
                             </div>
                         </div>
                     </div>
 
                     <div className="img-container2 flex gap-5 items-center justify-center mt-4">
-                    <div className="img-sub-container">
+                        <div className="img-sub-container">
+                            <div className='relative'>
+                                <img src={img3} alt="Image 3" className='w-[220px] lg:w-[420px] rounded-xl h-[120px] lg:h-[165px]' />
+                                <div className='w-[220px] lg:w-[420px] rounded-xl h-[120px] lg:h-[165px] absolute bg-secondary bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-500 top-0'>
+                                    <h1 className='flex w-full h-full justify-center items-center lg:text-3xl font-extrabold text-white'>The Joker</h1>
+                                </div>
+                            </div>
+                            <div className="img4-5-container flex gap-5 mt-5">
+                                <div className='relative'>
+                                    <img src={img4} alt="Image 4" className='w-[120px] lg:w-52 rounded-xl lg:h-[120px]' />
+                                    <div className='w-[120px] h-full lg:w-52 rounded-xl lg:h-[120px] absolute bg-secondary bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-500 top-0'>
+                                        <h1 className='flex w-full h-full justify-center items-center lg:text-3xl font-extrabold text-white'>Wonder Woman</h1>
+                                    </div>
+                                </div>
+                                <div className='relative'>
+                                    <img src={img5} alt="Image 5" className='w-[120px] lg:w-52 rounded-xl lg:h-[120px]' />
+                                    <div className='w-[120px] h-full lg:w-52 rounded-xl lg:h-[120px] absolute bg-secondary bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-500 top-0'>
+                                        <h1 className='flex w-full h-full justify-center items-center lg:text-3xl font-extrabold text-white'>Abe Sapien</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div className='relative'>
-                            <img src={img3} alt="Image 3" className='w-[220px] lg:w-[420px] rounded-xl h-[120px] lg:h-[165px]'/>
-                            <div className='w-[220px] lg:w-[420px] rounded-xl h-[120px] lg:h-[165px] absolute bg-secondary bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-500 top-0'>
-<h1 className='flex w-full h-full justify-center items-center lg:text-3xl font-extrabold text-white'>The Joker</h1>
+                            <img src={img6} alt="Image 6" className='w-[150px] lg:w-52 rounded-xl h-fit' />
+                            <div className='w-[150px] lg:w-52 rounded-xl h-full absolute bg-secondary bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-500 top-0'>
+                                <h1 className='flex w-full h-full justify-center items-center lg:text-3xl font-extrabold text-white'>Barb Wire</h1>
                             </div>
-                        </div>
-                        <div className="img4-5-container flex gap-5 mt-5">
-                            <div className='relative'>
-                                <img src={img4} alt="Image 4" className='w-[120px] lg:w-52 rounded-xl lg:h-[120px]'/>
-                                <div className='w-[120px] h-full lg:w-52 rounded-xl lg:h-[120px] absolute bg-secondary bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-500 top-0'>
-<h1 className='flex w-full h-full justify-center items-center lg:text-3xl font-extrabold text-white'>Wonder Woman</h1>
-                                </div>
-                            </div>
-                            <div className='relative'>
-                                <img src={img5} alt="Image 5" className='w-[120px] lg:w-52 rounded-xl lg:h-[120px]'/>
-                                <div className='w-[120px] h-full lg:w-52 rounded-xl lg:h-[120px] absolute bg-secondary bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-500 top-0'>
-<h1 className='flex w-full h-full justify-center items-center lg:text-3xl font-extrabold text-white'>Abe Sapien</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='relative'>
-                        <img src={img6} alt="Image 6" className='w-[150px] lg:w-52 rounded-xl h-fit'/>
-                        <div className='w-[150px] lg:w-52 rounded-xl h-full absolute bg-secondary bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-500 top-0'> 
-<h1 className='flex w-full h-full justify-center items-center lg:text-3xl font-extrabold text-white'>Barb Wire</h1>
-                        </div>
 
+                        </div>
                     </div>
-                </div>                    
                 </div>
             </div>
         </section>
