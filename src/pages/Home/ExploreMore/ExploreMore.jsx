@@ -3,7 +3,7 @@ import banner from "../../../assets/banner/banner6.jpg"
 
 const ExploreMore = () => {
     return (
-        <section className='my-10'>
+        <section className='my-10' data-aos="fade-up">
 <div>
 <div className="hero lg:px-10">
   <div className="hero-content flex-col lg:flex-row-reverse gap-10">

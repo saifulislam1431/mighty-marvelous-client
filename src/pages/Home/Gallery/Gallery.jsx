@@ -5,19 +5,22 @@ import img3 from "../../../assets/heroimg/The Joker_dc.jpg";
 import img4 from "../../../assets/heroimg/Wonder Woman_dc.jpg";
 import img5 from "../../../assets/heroimg/Abe Sapien_DarkHorse.jpg";
 import img6 from "../../../assets/heroimg/Barb Wire_DarkHorse.jpg";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 
 const Gallery = () => {
     return (
         <section className='flex items-center justify-center my-14 lg:my-24'>
             <div>
-                <div className='text-center lg:px-20'>
+                <div className='text-center lg:px-20' data-aos="fade-up">
                     <h1 className='text-primary brand-title text-2xl'>ToyVerse: Where Heroes Unite!</h1>
                     <p className='my-5 font-medium'>Explore our gallery of superhero toys where heroes from different universes unite in one epic collection. Witness the convergence of iconic characters and immerse yourself in the awe-inspiring world of heroic action figures and collectibles.</p>
                 </div>
 
                 <div className='img-container text-center my-10'>
-                    <div className='img-container1 flex gap-5 items-center justify-center'>
+                    <div className='img-container1 flex gap-5 items-center justify-center' data-aos="fade-right">
                         <div className='relative'>
                             <img src={img1} alt="Image 1" className='w-[150px] lg:w-52 rounded-xl' />
                             <div className='w-[150px] lg:w-52 h-full rounded-xl absolute bg-secondary bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-500 top-0'>
@@ -32,7 +35,7 @@ const Gallery = () => {
                         </div>
                     </div>
 
-                    <div className="img-container2 flex gap-5 items-center justify-center mt-4">
+                    <div className="img-container2 flex gap-5 items-center justify-center mt-4" data-aos="fade-left">
                         <div className="img-sub-container">
                             <div className='relative'>
                                 <img src={img3} alt="Image 3" className='w-[220px] lg:w-[420px] rounded-xl h-[120px] lg:h-[165px]' />

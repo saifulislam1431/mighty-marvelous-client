@@ -12,7 +12,7 @@ const CollectorShowcase = () => {
                     <p className='my-5 font-medium'>Explore a curated collection of superhero treasures, lovingly assembled by dedicated collectors. Discover rare finds, iconic figures, and exclusive editions in our Collector's Showcase. Immerse yourself in the world of superheroes and embrace the thrill of collecting.</p>
                 </div>
                 <div className='my-10 flex items-center justify-center gap-10 w-full flex-col lg:flex-row'>
-                    <div className='border border-primary p-4 lg:w-1/2 rounded-xl'>
+                    <div className='border border-primary p-4 lg:w-1/2 rounded-xl' data-aos="fade-right">
                         <div className='flex gap-2'>
 <div>
     
@@ -26,7 +26,7 @@ const CollectorShowcase = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='border border-primary p-4 lg:w-1/2 rounded-xl'>
+                    <div className='border border-primary p-4 lg:w-1/2 rounded-xl' data-aos="fade-left">
                     <div className='flex gap-2'>
 
 <div>
