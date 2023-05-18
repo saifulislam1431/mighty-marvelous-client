@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ToyTable from '../ToyTable/ToyTable';
+import Swal from 'sweetalert2';
 const AllToys = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const[allToys , setAllToys] = useState([]);
+    const[searchText , setSearchText] = useState("");
 
     const { totalToys } = useLoaderData();
     const itemPerPage = 20;
@@ -16,7 +18,15 @@ useEffect(()=>{
     .then(data=>setAllToys(data))
 },[currentPage , itemPerPage])
 
+const handleSearch = ()=>{
+    console.log(searchText)
+    fetch(`http://localhost:5000/toyByName/${searchText}`)
+    .then(res=>res.json())
+    .then(data=>{
+        setAllToys(data)
+    })
 
+}
 
     return (
         <section className='my-10'>
@@ -24,6 +34,15 @@ useEffect(()=>{
                 <div className='text-center lg:px-20' data-aos="fade-up">
                     <h1 className='text-primary brand-title text-2xl'>Toy Galaxy: Explore the Infinite Possibilities</h1>
                     <p className='my-5 font-medium'>Immerse yourself in a galaxy of toys, where the only limit is your imagination.</p>
+                </div>
+
+                <div className='text-center my-5'>
+                    
+                        <input 
+                        onChange={(e)=>setSearchText(e.target.value)}
+                        type="text" name="" placeholder='Search a toy..' className='inputField' />
+                        <button onClick={handleSearch} className='px-4 py-2 bg-primary text-white rounded-md ml-4' >Search</button>
+                  
                 </div>
 
 
