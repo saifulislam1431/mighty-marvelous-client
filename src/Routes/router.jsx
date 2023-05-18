@@ -10,6 +10,7 @@ import Register from '../pages/Register/Register';
 import AddToy from '../pages/AddToy/AddToy';
 import ErrorPage from '../pages/Error/ErrorPage';
 import PrivateRouter from './PrivateRouter';
+import ToyDetails from '../pages/ToyDetails/ToyDetails';
 
 const router = createBrowserRouter([
     {
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
             {
                 path:"register",
                 element:<Register></Register>
+            },
+            {
+                path:"/toyDetails/:id",
+                element:<PrivateRouter><ToyDetails></ToyDetails></PrivateRouter>,
+                loader:({params})=>fetch(`http://localhost:5000/allToys/${params.id}`)
             }
         ]
       },
