@@ -28,3 +28,15 @@
 .default{
   @apply bg-transparent
 }
+
+.tab{
+  @apply text-primary border border-primary mr-3 font-medium rounded-md mb-3
+}
+
+.activeTab{
+  @apply bg-primary text-white
+}
+
+.inputField{
+  @apply py-3 px-5 rounded-md outline-primary mt-5 lg:mt-0 bg-primary bg-opacity-10
+}

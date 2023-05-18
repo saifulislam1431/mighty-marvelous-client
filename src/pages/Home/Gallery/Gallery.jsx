@@ -20,7 +20,7 @@ const Gallery = () => {
                 </div>
 
                 <div className='img-container text-center my-10'>
-                    <div className='img-container1 flex gap-5 items-center justify-center' data-aos="fade-right">
+                    <div className='img-container1 flex gap-5 items-center justify-center' data-aos="fade-up">
                         <div className='relative'>
                             <img src={img1} alt="Image 1" className='w-[150px] lg:w-52 rounded-xl' />
                             <div className='w-[150px] lg:w-52 h-full rounded-xl absolute bg-secondary bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-500 top-0'>
@@ -35,7 +35,7 @@ const Gallery = () => {
                         </div>
                     </div>
 
-                    <div className="img-container2 flex gap-5 items-center justify-center mt-4" data-aos="fade-left">
+                    <div className="img-container2 flex gap-5 items-center justify-center mt-4" data-aos="fade-up">
                         <div className="img-sub-container">
                             <div className='relative'>
                                 <img src={img3} alt="Image 3" className='w-[220px] lg:w-[420px] rounded-xl h-[120px] lg:h-[165px]' />
