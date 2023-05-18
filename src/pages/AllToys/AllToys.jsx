@@ -6,6 +6,7 @@ const AllToys = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const[allToys , setAllToys] = useState([]);
     const[searchText , setSearchText] = useState("");
+    const[sortValue, setSortValue] = useState(1);
 
     const { totalToys } = useLoaderData();
     const itemPerPage = 20;
@@ -13,10 +14,10 @@ const AllToys = () => {
     const pageNumbers = [...Array(totalPage).keys()]
     
 useEffect(()=>{
-    fetch(`http://localhost:5000/allToys?page=${currentPage}&limit=${itemPerPage}`)
+    fetch(`http://localhost:5000/allToys?page=${currentPage}&limit=${itemPerPage}&sort=${sortValue}`)
     .then(res=>res.json())
     .then(data=>setAllToys(data))
-},[currentPage , itemPerPage])
+},[currentPage , itemPerPage, sortValue])
 
 const handleSearch = ()=>{
     console.log(searchText)
@@ -43,6 +44,15 @@ const handleSearch = ()=>{
                         type="text" name="" placeholder='Search a toy..' className='inputField' />
                         <button onClick={handleSearch} className='px-4 py-2 bg-primary text-white rounded-md ml-4' >Search</button>
                   
+                </div>
+                <div className='text-center my-5'>
+                <div className="dropdown dropdown-hover">
+  <label tabIndex={0} className="mySecBtn m-1">Sort By:</label>
+  <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+    <li className={`tab ${sortValue == 1? "selected" : ""} `} onClick={()=>setSortValue(1)}>Low Price</li>
+    <li className={`tab ${sortValue == -1? "selected" : ""} `} onClick={()=>setSortValue(-1)}>High Price</li>
+  </ul>
+</div>
                 </div>
 
 
