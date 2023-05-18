@@ -20,7 +20,7 @@ const AllToys = () => {
     }, [currentPage, itemPerPage, sortValue])
 
     const handleSearch = () => {
-        console.log(searchText)
+        // console.log(searchText)
         fetch(`http://localhost:5000/toyByName/${searchText}`)
             .then(res => res.json())
             .then(data => {

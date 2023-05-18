@@ -51,7 +51,7 @@ const UserToyTable = ({ toys, toy, setToys }) => {
             <td>{toySubCategory}</td>
             <td>${price}</td>
             <td className='text-center'>{quantity}</td>
-            <td><Link to={`/toyDetails/${_id}`} ><button className='myBtn'>Edit</button></Link><button className='bg-error py-1 px-2 rounded-md text-white ml-3' onClick={() => handleDelete(_id)}>Delete</button></td>
+            <td><Link to={`/updateToy/${_id}`} ><button className='myBtn'>Edit</button></Link><button className='bg-error py-1 px-2 rounded-md text-white ml-3' onClick={() => handleDelete(_id)}>Delete</button></td>
         </tr>
     );
 };
