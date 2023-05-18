@@ -4,30 +4,30 @@ import ToyTable from '../ToyTable/ToyTable';
 import Swal from 'sweetalert2';
 const AllToys = () => {
     const [currentPage, setCurrentPage] = useState(0);
-    const[allToys , setAllToys] = useState([]);
-    const[searchText , setSearchText] = useState("");
-    const[sortValue, setSortValue] = useState(1);
+    const [allToys, setAllToys] = useState([]);
+    const [searchText, setSearchText] = useState("");
+    const [sortValue, setSortValue] = useState(1);
 
     const { totalToys } = useLoaderData();
     const itemPerPage = 20;
     const totalPage = Math.ceil(totalToys / itemPerPage);
     const pageNumbers = [...Array(totalPage).keys()]
-    
-useEffect(()=>{
-    fetch(`http://localhost:5000/allToys?page=${currentPage}&limit=${itemPerPage}&sort=${sortValue}`)
-    .then(res=>res.json())
-    .then(data=>setAllToys(data))
-},[currentPage , itemPerPage, sortValue])
 
-const handleSearch = ()=>{
-    console.log(searchText)
-    fetch(`http://localhost:5000/toyByName/${searchText}`)
-    .then(res=>res.json())
-    .then(data=>{
-        setAllToys(data)
-    })
+    useEffect(() => {
+        fetch(`http://localhost:5000/allToys?page=${currentPage}&limit=${itemPerPage}&sort=${sortValue}`)
+            .then(res => res.json())
+            .then(data => setAllToys(data))
+    }, [currentPage, itemPerPage, sortValue])
 
-}
+    const handleSearch = () => {
+        console.log(searchText)
+        fetch(`http://localhost:5000/toyByName/${searchText}`)
+            .then(res => res.json())
+            .then(data => {
+                setAllToys(data)
+            })
+
+    }
 
     return (
         <section className='my-10'>
@@ -38,56 +38,56 @@ const handleSearch = ()=>{
                 </div>
 
                 <div className='text-center my-5'>
-                    
-                        <input 
-                        onChange={(e)=>setSearchText(e.target.value)}
+
+                    <input
+                        onChange={(e) => setSearchText(e.target.value)}
                         type="text" name="" placeholder='Search a toy..' className='inputField' />
-                        <button onClick={handleSearch} className='px-4 py-2 bg-primary text-white rounded-md ml-4' >Search</button>
-                  
+                    <button onClick={handleSearch} className='px-4 py-2 bg-primary text-white rounded-md ml-4' >Search</button>
+
                 </div>
                 <div className='text-center my-5'>
-                <div className="dropdown dropdown-hover">
-  <label tabIndex={0} className="mySecBtn m-1">Sort By:</label>
-  <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-    <li className={`tab ${sortValue == 1? "selected" : ""} `} onClick={()=>setSortValue(1)}>Low Price</li>
-    <li className={`tab ${sortValue == -1? "selected" : ""} `} onClick={()=>setSortValue(-1)}>High Price</li>
-  </ul>
-</div>
+                    <div className="dropdown dropdown-hover">
+                        <label tabIndex={0} className="mySecBtn m-1">Sort By:</label>
+                        <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                            <li className={`tab ${sortValue == 1 ? "selected" : ""} `} onClick={() => setSortValue(1)}>Low Price</li>
+                            <li className={`tab ${sortValue == -1 ? "selected" : ""} `} onClick={() => setSortValue(-1)}>High Price</li>
+                        </ul>
+                    </div>
                 </div>
 
 
-<div>
-<div className="overflow-x-auto w-full">
-  <table className="table w-full">
-    {/* head */}
-    <thead>
-      <tr>
-        <th>
-          Seller
-        </th>
-        <th>Toy Name</th>
-        <th>Sub-category</th>
-        <th>Price</th>
-        <th>Available Quantity</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-{
-    allToys.map(allToy=><ToyTable
-    key={allToy._id}
-    allToy={allToy}
-    ></ToyTable>)
-}
-    </tbody>    
-  </table>
-</div>
-</div>
-<div className='my-6 text-center'>
-    {
-        pageNumbers.map(pageNumber=><button key={pageNumber} className={`border py-1 px-3 mr-2 rounded-md hover:bg-primary hover:text-white font-semibold my-5 ${currentPage === pageNumber ? 'selected' : " "}`} onClick={()=>setCurrentPage(pageNumber)}>{pageNumber}</button>)
-    }
-    </div>                
+                <div>
+                    <div className="overflow-x-auto w-full">
+                        <table className="table w-full">
+                            {/* head */}
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Seller
+                                    </th>
+                                    <th>Toy Name</th>
+                                    <th>Sub-category</th>
+                                    <th>Price</th>
+                                    <th>Available Quantity</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    allToys.map(allToy => <ToyTable
+                                        key={allToy._id}
+                                        allToy={allToy}
+                                    ></ToyTable>)
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div className='my-6 text-center'>
+                    {
+                        pageNumbers.map(pageNumber => <button key={pageNumber} className={`border py-1 px-3 mr-2 rounded-md hover:bg-primary hover:text-white font-semibold my-5 ${currentPage === pageNumber ? 'selected' : " "}`} onClick={() => setCurrentPage(pageNumber)}>{pageNumber}</button>)
+                    }
+                </div>
             </div>
         </section>
     );
