@@ -11,9 +11,10 @@ const ToysTab = () => {
                 </div>
 <div className='my-5 text-center'>
 <button className={`tab ${activeTab == "" ? "activeTab" : ""}`} onClick={()=>setActiveTab("")}>All Toys</button>
-<button className={`tab ${activeTab == "marvel" ? "activeTab" : ""}`} onClick={()=>setActiveTab("marvel")}>Marvel</button>
-<button className={`tab ${activeTab == "dcCosmic" ? "activeTab" : ""}`} onClick={()=>setActiveTab("dcCosmic")}>DC Cosmic</button>
-<button className={`tab ${activeTab == "darkHorse" ? "activeTab" : ""}`} onClick={()=>setActiveTab("darkHorse")}>Dark Horse</button>   
+<button className={`tab ${activeTab == "Marvel" ? "activeTab" : ""}`} onClick={()=>setActiveTab("Marvel")}>Marvel</button>
+<button className={`tab ${activeTab == "DC" ? "activeTab" : ""}`} onClick={()=>setActiveTab("DC")}>DC Cosmic</button>
+<button className={`tab ${activeTab == "darkHorse" ? "activeTab" : ""}`} onClick={()=>setActiveTab("darkHorse")}>Dark Horse</button>  
+<button className={`tab ${activeTab == "Image" ? "activeTab" : ""}`} onClick={()=>setActiveTab("Image")}>Image Cosmic</button>  
 </div>                
             </div>
         </section>

@@ -40,3 +40,7 @@
 .inputField{
   @apply py-3 px-5 rounded-md outline-primary mt-5 lg:mt-0 bg-primary bg-opacity-10
 }
+
+.selected{
+  @apply bg-primary text-white
+}
