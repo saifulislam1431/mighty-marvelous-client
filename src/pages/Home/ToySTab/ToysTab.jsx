@@ -32,13 +32,15 @@ const ToysTab = () => {
 <button className={`tab ${activeTab == "Image" ? "activeTab" : ""}`} onClick={()=>setActiveTab("Image")}>Image Cosmic</button>  
 </div>    
 
-<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+<div className='flex justify-center items-center'>
+<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-10'>
     {
         tabsToy.slice(0, showMore ? 33 : 10).map(tabToy=><ToyByTab
         key={tabToy._id}
         tabToy={tabToy}
         ></ToyByTab>)
     }
+</div>
 </div>
 {
     !showMore && <div className='text-center'>

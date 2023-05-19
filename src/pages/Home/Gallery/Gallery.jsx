@@ -28,7 +28,7 @@ const Gallery = () => {
                             </div>
                         </div>
                         <div className='relative'>
-                            <img src={img2} alt="Image 2" className='w-[220px] lg:w-[420px] rounded-xl h-[150px] lg:h-[200px]' />
+                            <img src={img2} alt="Image 2" className='w-[210px] lg:w-[420px] rounded-xl h-[150px] lg:h-[200px]' />
                             <div className='w-[220px] lg:w-[420px] rounded-xl h-[150px] lg:h-[200px] absolute bg-secondary bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-500 top-0'>
                                 <h1 className='flex w-full h-full justify-center items-center lg:text-3xl font-extrabold text-white'>Hulk</h1>
                             </div>
@@ -38,7 +38,7 @@ const Gallery = () => {
                     <div className="img-container2 flex gap-5 items-center justify-center mt-4" data-aos="fade-up">
                         <div className="img-sub-container">
                             <div className='relative'>
-                                <img src={img3} alt="Image 3" className='w-[220px] lg:w-[420px] rounded-xl h-[120px] lg:h-[165px]' />
+                                <img src={img3} alt="Image 3" className='w-[210px] lg:w-[420px] rounded-xl h-[120px] lg:h-[165px]' />
                                 <div className='w-[220px] lg:w-[420px] rounded-xl h-[120px] lg:h-[165px] absolute bg-secondary bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-500 top-0'>
                                     <h1 className='flex w-full h-full justify-center items-center lg:text-3xl font-extrabold text-white'>The Joker</h1>
                                 </div>
