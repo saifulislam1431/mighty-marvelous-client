@@ -1,11 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { userContext } from '../../Auth/Auth';
 import UserToyTable from '../ToyTable/UserToyTable';
+import Loading from '../Loading/Loading';
+import { useNavigation } from 'react-router-dom';
 
 const MyToys = () => {
+    const navigation = useNavigation();
+    if(navigation.state === "loading"){
+      return <Loading></Loading>
+  }
     const{user} = useContext(userContext);
     const[toys , setToys]=useState([]);
-    const url =`http://localhost:5000/userToy?email=${user.email}`
+    const url =`https://mighty-marvelous-server.vercel.app/userToy?email=${user.email}`
 
     useEffect(()=>{
         fetch(url)

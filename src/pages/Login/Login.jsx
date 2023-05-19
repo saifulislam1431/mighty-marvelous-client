@@ -1,12 +1,18 @@
 import React, { useContext, useRef, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useNavigation } from 'react-router-dom';
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import { userContext } from '../../Auth/Auth';
 import logo from "../../assets/logo/logo2.png";
+import Loading from '../Loading/Loading';
 
 
 const Login = () => {
+    const navigation = useNavigation();
+    if(navigation.state === "loading"){
+        return <Loading></Loading>
+    }
+
     const { signIn,
         googleIn, resetPass } = useContext(userContext);
     const [type, setType] = useState("password");

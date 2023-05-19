@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useNavigation } from 'react-router-dom';
 import { FaEye, FaEyeSlash} from "react-icons/fa";
 import { toast } from 'react-toastify';
 import { userContext } from '../../Auth/Auth';
 import logo from "../../assets/logo/logo2.png";
 import { updateProfile } from 'firebase/auth';
+import Loading from '../Loading/Loading';
 
 const Register = () => {
     const[type , setType] = useState("password");
@@ -15,6 +16,11 @@ const Register = () => {
     const location = useLocation();
     console.log(location);
     const from = location.state?.from?.pathname || '/'; 
+
+    const navigation = useNavigation();
+    if(navigation.state === "loading"){
+        return <Loading></Loading>
+    }
 
     const handleShow =()=>{
         setType("text")

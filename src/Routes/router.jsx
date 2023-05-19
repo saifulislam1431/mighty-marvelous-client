@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             {
                 path:"allToys",
                 element:<AllToys></AllToys>,
-                loader:()=>fetch("http://localhost:5000/totalToys")
+                loader:()=>fetch("https://mighty-marvelous-server.vercel.app/totalToys")
             },
             {
                 path:"addToys",
@@ -51,12 +51,12 @@ const router = createBrowserRouter([
             {
                 path:"/toyDetails/:id",
                 element:<PrivateRouter><ToyDetails></ToyDetails></PrivateRouter>,
-                loader:({params})=>fetch(`http://localhost:5000/allToys/${params.id}`)
+                loader:({params})=>fetch(`https://mighty-marvelous-server.vercel.app/allToys/${params.id}`)
             },
             {
                 path:"/updateToy/:id",
                 element:<PrivateRouter><UpdateToys></UpdateToys></PrivateRouter>,
-                loader:({params})=>fetch(`http://localhost:5000/userToy/${params.id}`)
+                loader:({params})=>fetch(`https://mighty-marvelous-server.vercel.app/userToy/${params.id}`)
             }
         ]
       },

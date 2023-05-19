@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import ToyByTab from './ToyByTab';
+import { useNavigation } from 'react-router-dom';
+import Loading from '../../Loading/Loading';
 
 const ToysTab = () => {
     const[activeTab , setActiveTab] = useState("sdsd")
     const[tabsToy , setTabsToy] = useState([]);
     const[showMore , setShowMore] = useState(false);
+    const navigation = useNavigation();
+    if(navigation.state === "loading"){
+      return <Loading></Loading>
+  }
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/tabsToys/${activeTab}`)
+        fetch(`https://mighty-marvelous-server.vercel.app/tabsToys/${activeTab}`)
         .then(res=>res.json())
         .then(data=>setTabsToy(data))
     },[activeTab])

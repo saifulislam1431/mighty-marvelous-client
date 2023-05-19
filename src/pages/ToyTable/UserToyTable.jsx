@@ -1,12 +1,17 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigation } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import Loading from '../Loading/Loading';
 
 const UserToyTable = ({ toys, toy, setToys }) => {
+    const navigation = useNavigation();
+    if(navigation.state === "loading"){
+      return <Loading></Loading>
+  }
     const { _id, quantity, sellerName, toyName, toySubCategory, price } = toy
 
     // useEffect(()=>{
-    //     fetch(`http://localhost:5000/allToys/${_id}`)
+    //     fetch(`https://mighty-marvelous-server.vercel.app/allToys/${_id}`)
     // },[])
     const handleDelete = id => {
         console.log(id);
@@ -20,7 +25,7 @@ const UserToyTable = ({ toys, toy, setToys }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/allToys/${id}`,{
+                fetch(`https://mighty-marvelous-server.vercel.app/allToys/${id}`,{
                     method:"DELETE"
                 })
                     .then(res => res.json())

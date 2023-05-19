@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
 import ToyTable from '../ToyTable/ToyTable';
 import Swal from 'sweetalert2';
+import Loading from '../Loading/Loading';
 const AllToys = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const [allToys, setAllToys] = useState([]);
@@ -13,15 +14,20 @@ const AllToys = () => {
     const totalPage = Math.ceil(totalToys / itemPerPage);
     const pageNumbers = [...Array(totalPage).keys()]
 
+    const navigation = useNavigation();
+    if(navigation.state === "loading"){
+      return <Loading></Loading>
+  }
+
     useEffect(() => {
-        fetch(`http://localhost:5000/allToys?page=${currentPage}&limit=${itemPerPage}&sort=${sortValue}`)
+        fetch(`https://mighty-marvelous-server.vercel.app/allToys?page=${currentPage}&limit=${itemPerPage}&sort=${sortValue}`)
             .then(res => res.json())
             .then(data => setAllToys(data))
     }, [currentPage, itemPerPage, sortValue])
 
     const handleSearch = () => {
         // console.log(searchText)
-        fetch(`http://localhost:5000/toyByName/${searchText}`)
+        fetch(`https://mighty-marvelous-server.vercel.app/toyByName/${searchText}`)
             .then(res => res.json())
             .then(data => {
                 setAllToys(data)

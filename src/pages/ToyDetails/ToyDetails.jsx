@@ -1,9 +1,14 @@
 import React from 'react';
 import Rating from 'react-rating';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
 import { FaStar } from "react-icons/fa";
+import Loading from '../Loading/Loading';
 
 const ToyDetails = () => {
+    const navigation = useNavigation();
+    if(navigation.state === "loading"){
+      return <Loading></Loading>
+  }
     const toy = useLoaderData();
     // console.log(toy);
     const { details, photo, price, quantity, rating, sellerEmail, sellerName, toyName } = toy

@@ -5,8 +5,14 @@ import ExploreMore from '../ExploreMore/ExploreMore';
 import CollectorShowcase from '../CollectorShowcase/CollectorShowcase';
 import Contact from '../../Contact/Contact';
 import ToysTab from '../ToySTab/ToysTab';
+import Loading from '../../Loading/Loading';
+import { useNavigation } from 'react-router-dom';
 
 const Home = () => {
+    const navigation = useNavigation();
+    if(navigation.state === "loading"){
+      return <Loading></Loading>
+  }
     return (
         <section>
             <Banner />

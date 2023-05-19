@@ -1,9 +1,14 @@
 import React from 'react';
 import { FaStar } from "react-icons/fa";
 import Rating from 'react-rating';
-import { Link } from 'react-router-dom';
+import { Link, useNavigation } from 'react-router-dom';
+import Loading from '../../Loading/Loading';
 
 const ToyByTab = ({ tabToy }) => {
+    const navigation = useNavigation();
+    if(navigation.state === "loading"){
+      return <Loading></Loading>
+  }
     const {_id,toyName, price, rating, photo } = tabToy;
     return (
         <section className='my-10'>
