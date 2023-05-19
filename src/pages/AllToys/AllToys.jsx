@@ -47,8 +47,9 @@ const AllToys = () => {
 
                     <input
                         onChange={(e) => setSearchText(e.target.value)}
+                        onKeyUp={handleSearch}
                         type="text" name="" placeholder='Search a toy..' className='inputField' />
-                    <button onClick={handleSearch} className='px-4 py-2 bg-primary text-white rounded-md ml-4' >Search</button>
+                    {/* <button onClick={handleSearch} className='px-4 py-2 bg-primary text-white rounded-md ml-4' >Search</button> */}
 
                 </div>
                 <div className='text-center my-5'>

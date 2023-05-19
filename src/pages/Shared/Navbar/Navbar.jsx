@@ -6,36 +6,36 @@ import { toast } from 'react-toastify';
 import "./Navbar.css"
 import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa';
 const Navbar = () => {
-    const { user,logOUt } = useContext(userContext);
-    const handleLogOut = ()=>{
+    const { user, logOUt } = useContext(userContext);
+    const handleLogOut = () => {
         logOUt()
-        .then(() => {
+            .then(() => {
 
-            toast.success('Log Out Successful!', {
-                position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-            });
+                toast.success('Log Out Successful!', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
 
-            
-        })
-        .catch((error) => {
-            toast.error(error.message, {
-                position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-            });
-        })
+
+            })
+            .catch((error) => {
+                toast.error(error.message, {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
+            })
     }
     const navItems = <>
         <li>
@@ -60,10 +60,10 @@ const Navbar = () => {
     return (
         <section className='sticky top-0 z-50'>
             <div className="navbar navBg sticky top-0 z-50">
-            <div className='navbar-start inline-flex items-center lg:hidden'>
-                        <img src={logo} alt="" className='w-14' />
-                        <h1 className='brand-title text-xl'>Mighty Marvelous</h1>
-                    </div>
+                <Link to="/" className='navbar-start inline-flex items-center lg:hidden'>
+                    <img src={logo} alt="" className='w-14' />
+                    <h1 className='brand-title text-xl'>Mighty Marvelous</h1>
+                </Link>
                 <div className="navbar-end lg:navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -74,20 +74,20 @@ const Navbar = () => {
 
                             {
                                 user ? <div className=''>
-                                <button className='myBtn mr-3 inline-flex items-center gap-2' onClick={handleLogOut}>Sign Out <FaSignOutAlt /></button>
-                                <div>
-                                    <img src={user.photoURL}  className='w-14 rounded-full mx-auto mt-3'/>
-                                    <p className='absolute top-4 bg-opacity-90 text-black text-center flex items-center justify-center opacity-0 hover:opacity-100 right-2 bg-primary p-1 text-sm w-20 h-10'>{user.displayName}</p>
-                                </div>
+                                    <button className='myBtn mr-3 inline-flex items-center gap-2' onClick={handleLogOut}>Sign Out <FaSignOutAlt /></button>
+                                    <div>
+                                        <img src={user.photoURL} className='w-14 rounded-full mx-auto mt-3' />
+                                        <p className='absolute top-4 bg-opacity-90 text-black text-center flex items-center justify-center opacity-0 hover:opacity-100 right-2 bg-primary p-1 text-sm w-20 h-10'>{user.displayName}</p>
+                                    </div>
                                 </div> : <Link to="/login"><button className='myBtn inline-flex items-center gap-1'>Sign In <FaSignInAlt /></button></Link>
                             }
 
                         </ul>
                     </div>
-                    <div className='hidden lg:inline-flex items-center'>
+                    <Link to="/" className='hidden lg:inline-flex items-center'>
                         <img src={logo} alt="" className='w-14' />
                         <h1 className='brand-title text-xl'>Mighty Marvelous</h1>
-                    </div>
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -97,15 +97,15 @@ const Navbar = () => {
                 <div className="navbar-end hidden lg:flex">
                     {
                         user ? <div className='inline-flex gap-2 items-center'>
-                        <button className='myBtn mr-3 inline-flex items-center gap-2' onClick={handleLogOut}>Sign Out <FaSignOutAlt /></button>
-                        <div>
-                            <img src={user.photoURL} className='w-10 rounded-full'/>
-                            <p className='absolute top-4 bg-opacity-90 text-black text-center flex items-center justify-center opacity-0 hover:opacity-100 p-1 text-sm right-2 bg-primary w-20 h-10'>{user.displayName}</p>
-                        </div>
+                            <button className='myBtn mr-3 inline-flex items-center gap-2' onClick={handleLogOut}>Sign Out <FaSignOutAlt /></button>
+                            <div>
+                                <img src={user.photoURL} className='w-10 rounded-full' />
+                                <p className='absolute top-4 bg-opacity-90 text-black text-center flex items-center justify-center opacity-0 hover:opacity-100 p-1 text-sm right-2 bg-primary w-20 h-10'>{user.displayName}</p>
+                            </div>
                         </div> : <Link to="/login"><button className='myBtn inline-flex items-center gap-1'>Sign In <FaSignInAlt /></button></Link>
                     }
                 </div>
-                
+
             </div>
         </section>
     );

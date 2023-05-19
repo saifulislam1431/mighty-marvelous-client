@@ -4,7 +4,7 @@ import { useNavigation } from 'react-router-dom';
 import Loading from '../../Loading/Loading';
 
 const ToysTab = () => {
-    const[activeTab , setActiveTab] = useState("sdsd")
+    const[activeTab , setActiveTab] = useState("All")
     const[tabsToy , setTabsToy] = useState([]);
     const[showMore , setShowMore] = useState(false);
     const navigation = useNavigation();
@@ -25,7 +25,7 @@ const ToysTab = () => {
                     <p className='my-5 font-medium'>Explore our "Superhero Spotlight" section, where you can easily navigate and explore a diverse range of superhero toys.From action figures to collectible statues, find your favorite heroes grouped into specialized categories.</p>
                 </div>
 <div className='my-5 text-center'>
-<button className={`tab ${activeTab == "sdsd" ? "activeTab" : ""}`} onClick={()=>setActiveTab("sdsd")}>All Toys</button>
+<button className={`tab ${activeTab == "All" ? "activeTab" : ""}`} onClick={()=>setActiveTab("All")}>All Toys</button>
 <button className={`tab ${activeTab == "Marvel" ? "activeTab" : ""}`} onClick={()=>setActiveTab("Marvel")}>Marvel</button>
 <button className={`tab ${activeTab == "DC Comics" ? "activeTab" : ""}`} onClick={()=>setActiveTab("DC Comics")}>DC Comics</button>
 <button className={`tab ${activeTab == "Dark Horse" ? "activeTab" : ""}`} onClick={()=>setActiveTab("Dark Horse")}>Dark Horse</button>  

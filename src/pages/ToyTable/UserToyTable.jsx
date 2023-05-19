@@ -25,7 +25,7 @@ const UserToyTable = ({ toys, toy, setToys }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://mighty-marvelous-server.vercel.app/allToys/${id}`,{
+                fetch(`https://mighty-marvelous-server.vercel.app/deleteToy/${id}`,{
                     method:"DELETE"
                 })
                     .then(res => res.json())
