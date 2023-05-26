@@ -47,7 +47,7 @@ const AddToy = () => {
             <div>
 
                 <div>
-                    <h1 className='text-primary brand-title text-2xl text-center'>Add to Your Heroic Collection</h1>
+                    <h1 className='text-primary brand-title text-2xl text-center'>Add to Your Heroic Collections</h1>
                     <form className='w-full space-y-7 mt-16' onSubmit={handleAdd}>
                         {/* Toy Name & category  */}
                         <div className='md:flex gap-4'>

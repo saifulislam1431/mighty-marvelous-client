@@ -21,7 +21,7 @@ const MyToys = () => {
         <section className='my-10'>
             <div>
             <div className='text-center lg:px-20' data-aos="fade-up">
-                    <h1 className='text-primary brand-title text-2xl'>My Heroic Toy Collection</h1>
+                    <h1 className='text-primary brand-title text-2xl'>My Heroic Toy Collections</h1>
                     <p className='my-5 font-medium'>Step into the extraordinary realm of my personal heroic toy collection.</p>
                 </div>
 
